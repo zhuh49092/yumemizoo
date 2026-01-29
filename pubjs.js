@@ -1,7 +1,7 @@
 ﻿   var AllCommData; 
    var author='';
     // Google Apps Script部署后的Web应用URL 
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4-2BUPh8jzj9tUaU1l_pjziRQJ6wW4ls7DneaB88k26Y-gGKcxcT9lujor7i5yFMe/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkyPL8d0hwSFV95DctKBIICSpaN2Fj06x5uzdWz_BesK_tjdSa6qvNcy6mgi5y7978/exec';
 		 function generateUniqueId() {
 		  const timestamp = new Date().getTime();
 		  const randomPart = Math.floor(Math.random() * 10000);
