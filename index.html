@@ -37,7 +37,7 @@
 			                夢見ヶ崎動物公園新聞スペース
 			            </h1>
 			            <p class="text-sm text-white max-w-2xl  text-left ">
-			                あなたの発見が、みんなのニュースになる。投稿して「名誉レポーター」になってみませんか？
+			                今日の楽しさ、あとからも。キーホルダで、いつでも。
 			            </p>
             </div>       	
 
@@ -49,7 +49,7 @@
                         <div  class="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 cursor-pointer hover:scale-110 hover:shadow-lg transition-transform duration-300 flex items-center justify-center text-white font-medium relative">
                             <i class="fas fa-edit"></i>
                         </div>
-                        <span class="tooltip">我要发表</span>
+                        <span class="tooltip">投稿</span>
                     </div>
                     <div class="relative icon-container">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 cursor-pointer hover:scale-110 hover:shadow-lg transition-transform duration-300 flex items-center justify-center text-white font-medium relative">
@@ -87,7 +87,7 @@
 			  </div>   
 		      <div class="flex justify-center">
 		        <button type="submit" id="submitBtn" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed" >
-		         ～～～ガチャ～～～
+		         投稿
 		        </button>
 		      </div>
 		    </form>
@@ -101,8 +101,7 @@
                 id: 1,
                 type: 'image',
                 title: '',
-                picture: 'https://picsum.photos/400/300?random=1',
-                content: '这是第一张特色卡片，内容特别丰富，用于展示Padlet风格的瀑布流布局效果。通过CSS Grid和JavaScript的完美结合，我们可以实现真正根据内容自适应高度的瀑布流布局。\n\n特点包括：\n1. 第一张卡片特殊样式展示\n2. 根据内容自动调整高度\n3. 紧凑无间隙排列\n4. 响应式设计适配各种屏幕\n5. 流畅的动画过渡效果\n\n这种布局方式非常适合内容管理系统、作品展示墙、社交媒体信息流等应用场景。',
+                content: '‼️‼️‼️要注意‼️‼️‼️　投稿の際は、ご本人や他の方のお顔が写らないようご配慮ください。',
                 likes: 0,
                 comments: 0
             };
@@ -155,8 +154,8 @@
        	  	authorWin(1,'');
        	  	return;
        	  }         	
-        	makeform([{type:'image',id:'imageFile',title:'どんなようせいをみつけた？',tip:'写真をアップロード'},
-        	{type:'text',id:'commitMessage',title:'ひとことでみなにおしえてね～～～',tip:'ひとことでみなにおしえてね～～～2'}
+        	makeform([{type:'image',id:'imageFile',tip:'写真をアップロード'},
+        	{type:'text',id:'commitMessage',title:'話したいこと',tip:'今日の天気がいいね……'}
         	]);
         	$('#submitBtn').html("～～～ガチャ～～～");
         	$('#submitForm').off('submit');
@@ -171,7 +170,7 @@
 		        if (commitMessage=='')upjs++;
 		        if(upjs==2)
 		        {
-		         showResult('请选张图片或写点内容，不能啥也不留', 'error');
+		         showResult('写真、もしくはメッセージを残してね', 'error');
 		         return;	
 		        }	        
 		         $("#submitBtn").prop('disabled', true);
@@ -196,7 +195,7 @@
 		        const _id=$("#cardId").val();
 		        const commentConent = $('#commentConent').val() || '';
 	          if (commentConent=='') {
-		          showResult('评论内容不能为空', 'error');
+		          showResult('一言お願いします', 'error');
 		          return;
 		        }			        
 		         $("#submitBtn").prop('disabled', true);
@@ -205,9 +204,9 @@
         	showModal("#modalOverlay"); 
         }       
         function authorWin(_type,_id){    	
-        	makeform([{type:'input',id:'author',title:'请留下你的姓名',tip:'第一次发言，请告诉大家你是谁！'}
+        	makeform([{type:'input',id:'author',title:'ニックネーム',tip:'はじめての投稿ですね。表示名を入力してください。'}
         	]);
-        	$('#submitBtn').html('确定');
+        	$('#submitBtn').html('確定');
         	$('#submitForm').off('submit'); 
  	        $('#submitForm').on('submit', function(e) {
 		        e.preventDefault();
@@ -215,7 +214,7 @@
 		        $resultDiv.addClass('hidden');
 		        author=$("#author").val();	
 	          if (author=='') {
-		          showResult('姓名不能为空', 'error');
+		          showResult('表示名は必須です。', 'error');
 		          return;
 		        }		        	        
 		         $("#submitBtn").prop('disabled', true);
