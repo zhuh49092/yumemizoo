@@ -155,7 +155,7 @@
   let loadedCount = 0;
   const animators = [];
   const availableNumbers = [];
-  for (let i = 1; i <= 21; i++) {
+  for (let i = 1; i <= 30; i++) {
         availableNumbers.push(i);
     }
   
